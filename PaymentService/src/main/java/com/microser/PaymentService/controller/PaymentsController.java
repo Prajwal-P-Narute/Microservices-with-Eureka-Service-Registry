@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PaymentsController {
 
-    Logger looger = LoggerFactory.getLogger(PaymentsController.class);
+    Logger logger = LoggerFactory.getLogger(PaymentsController.class);
 
     @GetMapping("/options")
     public List<String> getAllPaymentOptionS(){
-        looger.info("Request for Payment Options ");
+        logger.info("Request for Payment Options ");
 
         return List.of("UPI", "Net Banking", "Credit Card", "Debit Card");
     }
@@ -26,7 +26,7 @@ public class PaymentsController {
 
     @PostMapping("/netbanking")
     public String netBanking(@RequestBody NetBankingInfo netBankingInfo){
-        looger.info("Request for Nat Banking Payment ");
+        logger.info("Request for Nat Banking Payment ");
 
         return "Payment Success.";
     }
